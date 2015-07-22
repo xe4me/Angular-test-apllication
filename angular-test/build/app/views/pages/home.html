@@ -1,0 +1,63 @@
+<!--  
+	***** Disclaimer : ****
+	I must have used ng-messages , it's better for maintainance ,it's cleaner and better
+	but as this is just a test , I felt like it's easier to do it this way 
+ -->
+
+<div data-ng-controller="HomeViewController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			<br><br><br>
+					<form name="userForm" class="form well"  data-ng-controller="FormController" data-ng-submit="submit(userForm)" novalidate>
+					    <div class="control">
+					      <label for="firstName">Name:</label>
+					      <div class="row">
+					        <div class="col-md-6">
+					          <input class="form-control" type="text" name="firstName" id="firstName" data-ng-model="user.firstName" required />
+					          <div class="error-messages" data-ng-if="interacted(userForm.firstName)" data-ng-messages="userForm.firstName.$error" data-ng-messages-include="form-messages">
+					            <div data-ng-message="required">Please provide your first name</div>
+					          </div>
+					        </div>
+					        <div class="col-md-6">
+					          <input class="form-control" type="text" name="last_name" id="last_name" data-ng-model="user.last_name" required />
+					          <div class="error-messages" data-ng-if="interacted(userForm.last_name)" >
+					            <div ng-show="userForm.last_name.$error.required">Please provide your last name</div>
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+
+					    <div class="control">
+					      <label for="emailAddress">Email:</label>
+					      <input class="form-control"
+					             type="email"
+					             name="emailAddress"
+					             id="emailAddress"
+					             data-ng-model="user.emailAddress"
+					             required />
+					      <div class="error-messages" data-ng-if="interacted(userForm.emailAddress)" data-ng-messages="userForm.emailAddress.$error" data-ng-messages-include="form-messages">
+					        <div data-ng-if="userForm.emailAddress.$error.required">Please enter your email address</div>
+					      </div>
+					    </div>
+
+					  
+					    <div class="control">
+					      <label for="dob">DOB:</label>
+					      <input class="form-control" type="text" name="dob" id="dob" data-ng-model="user.dob" required />
+					      <div class="error-messages" data-ng-if="interacted(userForm.dob)">
+					        <div >You cannot leave this field blank , sorry </div>
+					      </div>
+					    </div>
+					    <div class="control">
+					      <label for="dob">Subscribed:</label>
+							<input class="form-controll" type="radio" data-ng-model="user.subscribed" data-ng-value="true" /> Yes 
+							<input class="form-controll" type="radio" data-ng-model="user.subscribed" data-ng-value="false" /> NO 
+					    </div>
+					    <input class="form-control" class="btn btn-default btn-block" style="display:inline" type="submit" />
+					     <img ng-show="isLoading" class="embedded-iconbutton"  src="app/images/loading.gif"  alt="Loading ...">
+					  <form>		
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+$formBc:#E7E7E7;
+$errorColor:#F7DADA;
+
+
+.control {
+  margin-bottom:20px;
+}
+.error-messages {
+  background:$errorColor;
+  color:#1f1f1f;
+  padding:5px;
+  border-radius:5px;
+  margin-top:15px;
+  position:relative;
+}
+.error-messages:after {
+  position:absolute;
+  top:-10px;
+  content:"";
+  left:20px;
+  border-style:solid;
+  border-color:transparent transparent $errorColor;
+  border-width:5px;
+}
+.embedded-iconbutton{
+  max-width: 30px;
+    background-color:transparent;
+    border:0;
+    display: inline;
+    cursor: pointer;
+    position: relative;
+    margin-left: -35px;
+}
+

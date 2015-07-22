@@ -1,0 +1,7 @@
+{
+	"firstName": "Fred",
+	"last_name": "Bloggs",
+	"emailAddress": "fredd@bloggs.com",
+	"subscribed": true,
+	"dob": "1980-09-02"
+}

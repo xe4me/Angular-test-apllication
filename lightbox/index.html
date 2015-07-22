@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Lightbox </title>
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For the sake of responsiveness  -->
+</head>
+
+
+<!--[if IE 8]>
+	.container{
+		-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, SizingMethod='auto expand')";
+		margin-left: -53; 
+   		margin-top: -3px;
+	}
+<![endif]-->
+<body>
+
+<button id="btn-start" type="button">Reset</button>
+
+
+
+<!-- Lightbox START -->
+<div class="lightbox" id="lightbox">
+	<div class="container">
+		<div class="lightbox-header">
+			<span class="header-title center-vertical">Progress</span>
+			<button id="btn-close" class="close center-vertical" title="">x</button>
+		</div>
+		<div class="lightbox-content">
+			<div class="progress-bar-container">
+				<div class="progress"></div>
+			</div>
+			<div class="percent"></div>	
+		</div>
+	</div>	
+</div>
+<!-- Lightbox END -->
+
+
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>	
+<script src="js/lightbox.js"></script>
+<script>
+ 
+ 	// I've created a class called Lightbox , which is loaded above ;
+ 	// If I've underestood , a lightbox is the same as modal (pop up)
+	$(window).on('load', function(event) {
+		Lightbox.start();
+		
+	});
+	$("button#btn-close").on('click', function(event) {
+		event.preventDefault();
+		
+		Lightbox.close();
+	});
+
+	$("button#btn-start").on('click', function(event) {
+		event.preventDefault();
+		
+		Lightbox.start();
+	});
+   
+</script>
+</body>
+</html>
